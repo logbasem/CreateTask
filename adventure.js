@@ -14,8 +14,8 @@ var optionButtonsElement = document.getElementById("option-buttons");
 var adventureReady = "Are you ready for an adventure?";
 var howAreYou = "How are you?";
 
-//Wizard Path
-var wizardStart = "Aha! Another day for an adventure! You are completely prepared for the adventure ahead! You reach into your pocket and pull out...";
+//Fantasty Path
+var fantasyStart = "Aha! Another day for an adventure! You are completely prepared for the adventure ahead! You reach into your pocket and pull out...";
 
 //Mystery Path
 var mysteryStart = "You walk down a stone-bricked road under a gloomy evening sky, feeling crowded in by the buildings on each side. Another day. Just your luck, it begins to rain. You...";
@@ -23,18 +23,30 @@ var mysteryStart = "You walk down a stone-bricked road under a gloomy evening sk
 //Sci-Fi Path
 var sciFiStart = "You are drifting through a dimension between what is real and what is unreal. You choose...";
 
+//Endings
+var endings = ["Rejection of the Call"];
+
 var state = adventureReady;
+var weapon = "";
 
 gameStart();
 
 function setButtons(optionArray) {
     for (let i = 0; i < optionArray.length; i++) {
-        var button = document.createElement("button");
-        button.innerText = optionArray[i];
-        button.classList.add("btn");
-        button.addEventListener("click", () => buttonClicked(i));
-        optionButtonsElement.appendChild(button);
+        createButton(optionArray[i], buttonClicked, i)
     }
+}
+
+function responseAndOptions(responseString, buttonArray) {
+    textElement.innerText = responseString;
+    removeButtons();
+    createButton("Continue", responseClicked, buttonArray);
+}
+
+function responseAndEnd(responseString, endingName) {
+    textElement.innerText = (responseString + " END");
+    removeButtons();
+    createButton("OK", gameEnd, endingName);
 }
 
 function buttonClicked(buttonNum) {
@@ -42,25 +54,29 @@ function buttonClicked(buttonNum) {
         adventureReadyOptions(buttonNum);
     } else if (state == howAreYou) {
         howAreYouOptions(buttonNum);
+    } else if (state == fantasyStart) {
+        fantasyStartOptions(buttonNum);
     } else {
         playAgainOptions(buttonNum);
     }
 }
 
+function responseClicked(buttonArray) {
+    nextOption(state, buttonArray);
+}
+
 function adventureReadyOptions(buttonNum) {
     if (buttonNum == 0) {
-        alert("Huzzah! Let the adventure begin!");
         state = howAreYou;
-        nextOption(state, ["Wonderful!", "Terrible.", "Somewhere in-between."]);
+        responseAndOptions("Huzzah! Let the adventure begin!", ["Wonderful!", "Terrible.", "Somewhere in-between."]);
     } else {
-        alert("You go home. END");
-        gameEnd("Rejection of the Call"); //figure out how to make a different color or bold or something
+        responseAndEnd("You go home.", "Rejection of the Call");
     }
 }
 
 function howAreYouOptions(buttonNum) {
     if (buttonNum == 0) {
-        state = wizardStart;
+        state = fantasyStart;
         nextOption(state, ["Your sword!", "Your wand!", "Nothing!"]);
     } else if (buttonNum == 1) {
         state = mysteryStart;
@@ -69,6 +85,10 @@ function howAreYouOptions(buttonNum) {
         state = sciFiStart;
         nextOption(state, ["What is real", "What is unreal"]); //what is love? baby don't hurt me
     }
+}
+
+function fantasyStartOptions(buttonNum) {
+    
 }
 
 function playAgainOptions(buttonNum) {
@@ -81,9 +101,11 @@ function playAgainOptions(buttonNum) {
     }
 }
 
+//Figure out bold text for ending name
 function gameEnd(endingName) {
     state = "END";
-    nextOption("You have achieved the ending: " + endingName + ". Play again?", ["Yes", "No"]);
+    nextOption("You have achieved the ending: " + endingName + " (Ending " + (endings.indexOf(endingName)+1) + " out of " +
+    endings.length + "). Play again?", ["Yes", "No"]);
 }
 
 function gameStart() {
@@ -98,8 +120,17 @@ function nextOption(optionTitle, optionButtons) {
     setButtons(optionButtons);
 }
 
+function createButton(buttonText, clickFunction, clickParameter) {
+    var button = document.createElement("button");
+    button.innerText = buttonText;
+    button.classList.add("btn");
+    button.addEventListener("click", () => clickFunction(clickParameter));
+    optionButtonsElement.appendChild(button);
+}
+
 function removeButtons() {
     while (optionButtonsElement.firstChild) {
         optionButtonsElement.removeChild(optionButtonsElement.firstChild);
     }
 }
+
