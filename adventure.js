@@ -30,7 +30,8 @@ var fantasyForwardPath = "You continue on straight ahead, ignoring the paths to 
 that the hallway is getting brighter around you. You pick up the pace a little, anxious to see what the source of light is. Then, you see it. You arrive \
 in a huge room in the dungeon, lit by a bright bonfire in the center. Around it are an array of strange monsters, dancing and laughing around \
 the flames. They have long fuzzy tails, cream-colored fur crusted with dirt, and sharp teeth visible when they open their mouths. \
-You can't tell whether they remind you more of dogs or cats. As you enter the room, they all fall silent, turning to look at you with sharp eyes. You...";
+You can't tell whether they remind you more of dogs or cats. As you enter the room, they all fall silent, turning to look at you with sharp eyes. On \
+the other side of the room, there is a doorway leading to another room. You...";
 
 var fantasyOpenChest = "You attempt to open the chest. It's locked. ...That makes sense. You...";
 var fantasyIgnoreChest = "You eye the chest suspiciously. You do not think the treasure will be achieved this easily. Most likely, the chest is trap.";
@@ -64,6 +65,28 @@ var fantasyShakeMonster = "You attempt to shake off the monster clinging to your
 knees in pain. Seeing the oportunity, the other monsters quickly fall upon you. You Die.";
 var fantasyDazeMonster = "You fall back onto the ground in an attempt to daze the monster. Immediately, you feel the monster's grip relent on your back, \
 and you hop to your feet. There are already more monsters approaching, surrounding you. You...";
+var fantasyAttackBackMonster = "You attempt to attack the monster on your back, but it is difficult to attack it when it is clinging to you. It's just \
+out of reach of your swings, and the more you swing, the more tired you get. The monster digs its claws in deeper, causing you to fall to your knees in \
+pain. Seeing the oportunity, the other monsters quickly fall upon you. You Die.";
+var fantasyKeepFighting = "You do not give up. The monsters attack, leaping at you in pairs of two, or even all at once, but your resolve is clear. You \
+dodge, attack, jump, roll. You are a whirl of action in the onslaught of attacks. Then, before you know it, you are standing in a room alone with a bonfire \
+crackling in the center, all the monsters slain. What do you do?";
+var fantasyRunAway = "You knew dungeons were supposed to be dangerous, but THIS dangerous?! You aren't cut out for this!! You turn away from the monsters \
+and run away as fast as you can, not looking back. However, you have just killed one of the monster's kind. The monsters are not going to let you escape \
+so easily. They are right on your tail, and you can hear them gaining on you. You dart down a corridor, unsure at where you even are anymore, anxious \
+to get away as quickly as possible. Strangely, though, you suddenly don't feel the ground beneath you anymore. You look down like a coyote in a cartoon, \
+and realize that there is a pit of spikes below you. Then, and only then, you fall into the spiketrap. You Die.";
+var fantasyLootCamp = "You search the camp for any loot. You find some food around the fire, which you eat gratefully. In addition, you find some medical \
+supplies to heal your wound, along with 12 gold! Satisfied, you...";
+var fantasyOfferTrade = "You gesture to the camp to show that you would like to join the festivities. Seeming to understand, one of the monsters steps \
+forward, picking up a loaf of bread. The monster gestures to itself and the bread, and then to you. You realize that it is wanting to trade with you. \
+You search through your possessions for something to give the monsters in return. You choose...";
+var fantasyOfferWalnuts = "You smile sheepishly and hold out a couple of walnuts that you found on the way to the dungeon. The monster glares at you for \
+a second or two, before hitting the walnuts out of your hands. The monster then, incredibly insulted, leaps at you, and you have no time to defend youself \
+before you are swiftly killed. You Die.";
+
+var fantasyEnterKeyRoom = "You enter the next room, and you are immediately greeted by a huge monster with scales, fur, and three large, strangely \
+pulsating skulls. The moment it sees you, it lets out a cry of surprise and attacks, swinging at you with a huge club. What do you do?";
 
 
 //Mystery Path
@@ -73,7 +96,8 @@ var mysteryStart = "You walk down a stone-bricked road under a gloomy evening sk
 var sciFiStart = "You are drifting through a dimension between what is real and what is unreal. You choose...";
 
 //Endings
-var endings = ["Rejection of the Call", "Right? Wrong", "Jurassic Park", "Sorry For Party Rocking"];
+var endings = ["Rejection of the Call", "Right? Wrong", "Jurassic Park", "Sorry For Party Rocking", "A Monster You Just Can't Shake", 
+"An Itch You Just Can't Scratch", "A Coward's Death", "Aw, Nuts!", "Don't Stop The Party!"];
 
 var state = adventureReady;
 var weapon = "";
@@ -123,6 +147,18 @@ function buttonClicked(buttonNum) {
         fantasyInspectRockOptions(buttonNum);
     } else if (state == fantasyKickRock) {
         fantasyKickRockOptions(buttonNum);
+    } else if (state == fantasyAttackMonsters) {
+        fantasyAttackMonstersOptions(buttonNum);
+    } else if (state == fantasyDazeMonster) {
+        fantasyDazeMonsterOptions(buttonNum);
+    } else if (state == fantasyKeepFighting) {
+        fantasyKeepFightingOptions(buttonNum);
+    } else if (state == fantasyLootCamp) {
+        fantasyLootCampOptions(buttonNum);
+    } else if (state == fantasyGreetMonsters) {
+        fantasyGreetMonstersOptions(buttonNum);
+    } else if (state == fantasyOfferTrade) {
+        fantasyOfferTradeOptions(buttonNum);
     }
     else {
         playAgainOptions(buttonNum);
@@ -261,6 +297,84 @@ function fantasyKickRockOptions(buttonNum) {
     }
 }
 
+function fantasyAttackMonstersOptions(buttonNum) {
+    if (buttonNum == 0) {
+        responseAndEnd(fantasyShakeMonster, "A Monster You Just Can't Shake");
+    } else if (buttonNum == 1) {
+        state = fantasyDazeMonster;
+        nextOption(state, ["Keep fighting", "RUN AWAY!!!!!!"]);
+    } else {
+        responseAndEnd(fantasyAttackBackMonster, "An Itch You Just Can't Scratch");
+    }
+}
+
+function fantasyDazeMonsterOptions(buttonNum) {
+    if (buttonNum == 0) {
+        state = fantasyKeepFighting;
+        nextOption(state, ["Search the camp for loot", "Continue to the next room"]);
+    } else {
+        responseAndEnd(fantasyRunAway, "A Coward's Death");
+    }
+}
+
+function fantasyKeepFightingOptions(buttonNum) {
+    if (buttonNum == 0) {
+        state = fantasyLootCamp;
+        nextOption(state, ["Go back to the dungeon's entrance", "Continue to the next room"]);
+    } else {
+        state = fantasyEnterKeyRoom;
+        nextOption(state, ["Attempt to dodge club", ("Attack with your " + weapon)]);
+    }
+}
+
+function fantasyLootCampOptions(buttonNum) {
+    if (buttonNum == 0) {
+        state = fantasyEnterDungeon;
+        nextOption(state, ["Left", "Right", "Straight Ahead"]);
+    } else {
+        state = fantasyEnterKeyRoom;
+        nextOption(state, ["Attempt to dodge club", ("Attack with your " + weapon)]);
+    }
+}
+
+function fantasyGreetMonstersOptions(buttonNum) {
+    if (buttonNum == 0) {
+        state = fantasyEnterKeyRoom;
+        responseAndOptions("'Uh... alright then..' You say, and you begin to cautiously step around the encampment. The monsters do not stop staring \
+        at you. You can feel yourself sweating. 'Uh... Don't mind me, guys.' You say. 'Just gonna... make my way over to this door.' You continue \
+        forward, one shaky step at a time, none of the monsters making any move to stop you, until, to your surprise, you make it to the other \
+        side of the room. 'Oh!' You say, glancing first at the doorway in front of you, then the monsters behind you. 'Thanks for not, uh- killing \
+        me!' You call out to the monsters. Then, your courage runs out, and you duck into the next room.", ["Attempt to dodge club", ("Attack with your " + weapon)]);
+    } else if (buttonNum == 1) {
+        state = fantasyOfferTrade;
+        nextOption(state, ["A couple walnuts", "A ball of yellow string", "A note to yourself you wrote that says 'Remember to bring more useful tradeable items when you go adventuring'"]);
+    } else {
+        state = fantasyGreetMonsters;
+        responseAndOptions("You really don't seem to get this whole 'they can't understand you' thing. The monsters continue to stare at you blankly when you ask them about treasure.", 
+        ["Attempt to awkwardly shuffle past the monsters", "Gesture to the bonfire as a way of indicating that you'd like to join the festivities", "Ask about treasure"]);
+    }
+}
+
+function fantasyOfferTradeOptions(buttonNum) {
+    if (buttonNum == 0) {
+        responseAndEnd(fantasyOfferWalnuts, "Aw, Nuts!");
+    } else if (buttonNum == 1) {
+        state = fantasyEnterKeyRoom;
+        responseAndOptions("You smile sheepishly and hold out a ball of yellow string that you sometimes use to patch holes in your adventurer's outfit. \
+        The monster takes it from you carefully, inspecting the string with its claws, before its pupils grow large, and it begins to make a sound \
+        almost like a meow as it fiddles with the string in its hands. The other monsters step forward, curious, and they all become enraptured by \
+        the string. Too enraptured. They begin to shove one another to get to the string, then they begin to scratch, making growling and hissing \
+        noises as they dissolve into an all-out fight, the monsters viciously attacking one another for the yellow string. You wince, taking a step \
+        back. You did not mean to do that. As quietly as you can, you shuffle away to the next room.", ["Attempt to dodge club", ("Attack with your " + weapon)]);
+    } else {
+        state = fantasyEnterKeyRoom;
+        responseAndEnd("You smile sheepishly and hold out the note, for some reason thinking this is a good idea. You really should have brought \
+        more useful tradeable items. The monster takes the note from your hands carefully, inspecting it for a few seconds, before it makes a motion \
+        resembling a shrug, and tosses the note into the fire as kindling. Then, it hands you the loaf of bread, and the mosnters welcome you into the \
+        festivities. You party into the night with the monsters, completely forgetting about your adventure, and having an all-around great time.",
+        "Don't Stop The Party!");
+    }
+}
 
 
 function playAgainOptions(buttonNum) {
