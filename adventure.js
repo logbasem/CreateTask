@@ -87,7 +87,23 @@ before you are swiftly killed. You Die.";
 
 var fantasyEnterKeyRoom = "You enter the next room, and you are immediately greeted by a huge monster with scales, fur, and three large, strangely \
 pulsating skulls. The moment it sees you, it lets out a cry of surprise and attacks, swinging at you with a huge club. What do you do?";
-
+var fantasyDodgeClub = "You jump out of the way of the club just in time, barely managing to avoid being clobbered. You...";
+var fantasyAttackClub = "You attempt to attack the monster, but the HUGE CLUB HURTLING TOWARDS YOU puts a stop to this attempt fairly quickly. The club \
+hits you with a crushing momentum, throwing you to the side of the room, where your head connects with a wall. You Die.";
+var fantasyAttackJimbor = "You attack the monster, using its failed swing as an opportunity to get a good hit in. The monster reels back a little at \
+the attack, and you have clearly done some amount of damage. However, the monster is quick to react, and it swings its club again at you in retaliation \
+from your left side. You dodge...";
+var fantasyAssessJimbor = "You stop mid-fight to assess the monster for weakness. You are surprised to see the monster also stop, as it begins to also \
+assess you for weaknesses. The monster seems more intelligent than you first thought. You see several weaknesses, though, including its left neck, its \
+right neck, and a spot where scales and fur meet just above its hip. You choose to attack the...";
+var fantasyDodgeLeft = "Why. Why. Why would you do that. Why would you- The club was coming from the left, why would you dodge to the left?! That's not \
+how dodging works! Whatever. Whatever. You Die, obviously.";
+var fantasyDodgeForward = "You jump forwards, managing to avoid the club, and also bringing you closer to the monster, allowing you to land another hit \
+on it. 'OW!' The monster says. It sounds like it speaks the same language as you. The monster retreats a few steps back, and you have the advantage. You...";
+var fantasyDodgeBackward = "You jump backwards, feeling the wind of the club's swing on your face as you avoid being hit. You are too far away to attack \
+from where you are, so the monster attacks again, this time using its other claw-like hand to try and swipe at you. You..."
+var fantasyBothAssess = "At the same time you go for the monster's weakness, it goes for yours, and you wind up both twisting out of the way to avoid \
+another. You look at the monster for a moment, before you...";
 
 //Mystery Path
 var mysteryStart = "You walk down a stone-bricked road under a gloomy evening sky, feeling crowded in by the buildings on each side. Another day in this cold-hearted city. Just your luck, it begins to rain. You...";
@@ -97,7 +113,7 @@ var sciFiStart = "You are drifting through a dimension between what is real and 
 
 //Endings
 var endings = ["Rejection of the Call", "Right? Wrong", "Jurassic Park", "Sorry For Party Rocking", "A Monster You Just Can't Shake", 
-"An Itch You Just Can't Scratch", "A Coward's Death", "Aw, Nuts!", "Don't Stop The Party!"];
+"An Itch You Just Can't Scratch", "A Coward's Death", "Aw, Nuts!", "Don't Stop The Party!", "Welcome to the Club", "why"];
 
 var state = adventureReady;
 var weapon = "";
@@ -159,6 +175,14 @@ function buttonClicked(buttonNum) {
         fantasyGreetMonstersOptions(buttonNum);
     } else if (state == fantasyOfferTrade) {
         fantasyOfferTradeOptions(buttonNum);
+    } else if (state == fantasyEnterKeyRoom) {
+        fantasyEnterKeyRoomOptions(buttonNum);
+    } else if (state == fantasyDodgeClub) {
+        fantasyDodgeClubOptions(buttonNum);
+    } else if (state == fantasyAttackJimbor) {
+        fantasyAttackJimborOptions(buttonNum);
+    } else if (state == fantasyAssessJimbor) {
+        fantasyAssessJimborOptions(buttonNum);
     }
     else {
         playAgainOptions(buttonNum);
@@ -198,7 +222,7 @@ function fantasyStartOptions(buttonNum) {
         responseAndOptions("An adventurer never leaves home without their sword! You forge ahead.", ["Left", "Right", "Straight Ahead"]);
     } else if (buttonNum == 1) {
         state = fantasyEnterDungeon;
-        weapon = "wand";
+        weapon = "magic";
         responseAndOptions("A wizard never leaves home without their wand! You forge ahead.", ["Left", "Right", "Straight Ahead"]);
     } else {
         state = fantasyEnterDungeon;
@@ -376,6 +400,41 @@ function fantasyOfferTradeOptions(buttonNum) {
     }
 }
 
+function fantasyEnterKeyRoomOptions(buttonNum) {
+    if (buttonNum == 0) {
+        state = fantasyDodgeClub;
+        nextOption(state, [("Attack with your " + weapon), "Assess monster for weakspots"]);
+    } else {
+        responseAndEnd(fantasyAttackClub, "Welcome to the Club");
+    }
+}
+
+function fantasyDodgeClubOptions(buttonNum) {
+    if (buttonNum == 0) {
+        state = fantasyAttackJimbor;
+        nextOption(state, ["Left", "Forward", "Backward"]);
+    } else {
+        state = fantasyAssessJimbor;
+        nextOption(state, ["Left neck", "Right neck", "Hip"]);
+    }
+}
+
+function fantasyAttackJimborOptions(buttonNum) {
+    if (buttonNum == 0) {
+        responseAndEnd(fantasyDodgeLeft, "why");
+    } else if (buttonNum == 1) {
+        state = fantasyDodgeForward;
+        nextOption(state, ["Attack again!", "Wait"]);
+    } else {
+        state = fantasyDodgeBackward;
+        nextOption(state, [("Attempt to block hand with your " + weapon), "Dodge swing"]);
+    }
+}
+
+function fantasyAssessJimborOptions(buttonNum) {
+    state = fantasyBothAssess;
+    nextOption(state, ["Nod appreciatively", "Attack again at the same spot"]);
+}
 
 function playAgainOptions(buttonNum) {
     if (buttonNum == 0) {
