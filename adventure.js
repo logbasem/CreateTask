@@ -104,6 +104,72 @@ var fantasyDodgeBackward = "You jump backwards, feeling the wind of the club's s
 from where you are, so the monster attacks again, this time using its other claw-like hand to try and swipe at you. You..."
 var fantasyBothAssess = "At the same time you go for the monster's weakness, it goes for yours, and you wind up both twisting out of the way to avoid \
 another. You look at the monster for a moment, before you...";
+var fantasyAttackAgain = "You attack Jimbor again, quick as lightning, and do significant damage. 'GAHHH!' The monster says, taking a wild swing at you.";
+var fantasyWait = "You wait before going in for another attack. The monster soon gathers its bearings again, and you lose your shot at catching it when it's \
+weak. Still, you see a glimmer of something like respect in the monster's eyes. In solidarity, it allows you a moment to prepare yourself, too, before it \
+attacks.";
+var fantasyBlockJimbor = "You manage to block Jimbor's attack, but not without taking some damage.";
+var fantasyDodgeJimbor = "You dodge again, but don't move quite quick enough, and the hit catches you in the side, forcing you to take a moment before \
+you leap back into action.";
+var fantasyNodAppreciatively = "You nod appreciatively at the monster. The monster nods back, and you launch back into battle."
+var fantasyAttackSameSpot = "You attack again immediately, going for the same spot. This time, you succeed, doing signicant damage to the monster. It lets \
+out a mighty cry, clutching at the spot with one hand as it swings with the other at your weakness- your oh-so vulnerable neck. You are able to avoid \
+being killed, but the swing catches you in the shoulder, drawing blood, and you wince with pain."
+var fantasyJimborImplore = "The battle rages on for a long time, with you and the monster both giving it your all. You are fairly evenly matched, the \
+monster matching your every strike, and you matching its. You dodge and parry and swing and roll and jump more times than you can count, and the battle \
+goes on and on, a neverending dance of claws and fists. At one point, you and the monster step back for a moment, both of you exhausted. As you stand up \
+and prepare to return to the battle, however, the monster does not. Instead, it sets its club on the ground, and stands there for a moment, looking at you. \
+You feel confused. What is it doing? You stop, too, and the monster says to you, 'Listen, merciful adventurer. We need not be enemies. You and I are more \
+alike than you might think. We both have skin, have bones, have beating hearts and strangely pulsating skulls. Please, brave adventurer- have mercy. You \
+have fought well, as have I, and I wish to fight no longer. Let us both part from this as allies, rather than foes. Would you make peace with me, friend?'";
+
+var fantasyBefriendJimbor = "You stop and look at the monster, amazed at the eloquence of its words. You realize that it is right. You are not so different \
+from it. Why should you fight? 'What is your name?' You ask. The monster smiles wide, its sharp teeth on full display, but you do not feel threatened. \
+You tell the monster your name, and in return, it tells you that its name is Jimbor. As you speak to Jimbor, you learn about its friends, its family, its \
+monster home. You tell Jimbor about…";
+var fantasyTakeKey = " You put the key in your pocket, and then you look around the room. You see no unsearched areas, so, you return back to the dunegon's \
+entrance.";
+var fantasyKillJimbor = "'Begone, foul beast!' You shout. You kill the monster without remorse, and then you loot the body for treasure, finding nothing. \
+Then, you search the room, and you find a gold key."
+var fantasyMentalNote = " You remember your earlier mental note to look for keys. This must be the key you were looking for!";
+var fantasyEverything = "You tell Jimbor about your travels, your hopes, your dreams, your favorite color, your deepest fear. You tell Jimbor about the \
+family you left behind, about the scar on your elbow from your very first battle. You tell Jimbor you’ve never had a friend like it before. Jimbor listens, \
+and it offers its support to you. You speak for hours, and as you do, you realize that maybe, the real treasure was friendship, all along.";
+var fantasyFellowAdventurer = "You take out your journal and show Jimbor all the entries you have written about the fellow adventurer who you have loved \
+for years. You tell Jimbor all your favorite things about this adventurer, you tell Jimbor about the day you first realized you loved this adventurer. Jimbor \
+listens to you for a long time before it speaks. ‘You know, I am a married monster,’ Jimbor begins, ‘It sounds as if you truly love this adventurer, and if \
+that is the case, my dear friend, I say you should go for it. Leave this dungeon right now, and go and tell this adventurer how you feel.’ You realize that \
+Jimbor is right. You have waited for so long, and you need to act! You leave the dungeon immediately in search of love, thanking Jimbor for its help. When \
+you wed your fellow adventurer, a few months later, you invite Jimbor and its family to your wedding.";
+var fantasyAskTreasure = "You tell Jimbor about your reason for coming to this dungeon: to find the treasure rumored to be here. Jimbor tilts its head, \
+‘Treasure?’ It says. It turns around picking something up from behind it. ‘Would this help?’ Jimbor says, holding out a gold key.";
+var fantasyYesKey = " 'Yes! Yes, Jimbor- thank you!' You say. 'Thank you so much for your help, friend.' You tell Jimbor.";
+
+var fantasyAttemptUnlock = "You take out the key from your pocket, gazing excitedly at the chest in front of you. This is it: the moment of truth. This \
+is the reason why you came to this dungeon. You slide the key into the lock and- It gets stuck. The lock has been warped, and it's too small for the key \
+you have. The key doesn't fit. All this work, and the key doesn't fit. What now?";
+var fantasyTreasure = "You look through your items, and find nothing of much use, and certainly nothing to break the lock with. You can't use your \
+weapon, either, because that's not its intended purpose in the story. But wait! You remember the rock you have carried with you all your time- \
+Your dearest friend, your lifelong companion. You take the rock out from your pocket. 'Will you help me, friend?' You ask the rock. The rock says \
+nothing, but you feel that the answer is yes. You swing the rock in your hands and use it to break a hole in the lock large enough for the key to \
+be able to fit again. You turn the key in the lock with a satisfying click, and the chest unlocks. Inside, you find exactly what you came here for, \
+your heart's desire, your white whale: treasure. The chest is full to bursting with coins, jewlery, gemstones, and all sorts of expensive items, each \
+piece worth enough on its own to make you rich. Put together, you can't even begin to imagine how much it's all worth. You've worked so hard for this \
+moment, and it's hard to believe that it's finally here. You think back to all the moments that you brought you here. Every monster fought, every time \
+you found yourself ready to give up. It was all worth it, for this moment, right now. You think about what you'll do with this money, you think about your \
+family back home. You want to go and visit them. You feel a feeling deep inside, and soon you recognize it as satisfaction. Complete satisfaction of a quest \
+completed successfully. You did it. You found your treasure.";
+var fantasyNoRock = "You look through your items, and find nothing of much use, and certainly nothing to break the lock with. You can't use your \
+weapon, either, because that's not its intended purpose in the story. You cry out in frustration. All of this- all of this work- for nothing. Nothing! \
+How could this be?! You try to break the lock with your fist, but only succeed in giving yourself a splinter on the wood of the chest. Then, you cry. If \
+only you'd found something to break the lock with. Then, you wouldn't be in this situation.";
+var fantasyGiveUp = "You stare at the lock for a few seconds, then the key in your hand. You take a moment to look around the room you're in. You take a \
+deep breath. 'You know what!' You say to no one in particular. 'I'm done.' You say. 'I'm done with all of this. I'm so done. I hate this stupid dungeon \
+and this stupid key and this stupid-' You kick the chest in front of you, '-Treasure!' You drop the key to the ground, then wave dramatically to the room \
+around you. 'Good riddance, dungeon!' You say. You go home."
+var fantasyCurseGods = "You fall to your knees, throwing the key to the ground as you cast your head upwards. 'CURSE YOU OH CRUEL GODS ABOVE!!' You exclaim \
+at the top of your lungs. Your voice echoes through the dungeon. 'IS MY LIFE SOME SORT OF JOKE TO YOU? DO YOU ENJOY THIS? MAKING ME MISERABLE?' You scream. \
+'CURSE YOU ALL!' Then, you stand up, fuming, and storm out of the dungeon once and for all, done with this game. The moment you step outside, you are struck by lightning.";
 
 //Mystery Path
 var mysteryStart = "You walk down a stone-bricked road under a gloomy evening sky, feeling crowded in by the buildings on each side. Another day in this cold-hearted city. Just your luck, it begins to rain. You...";
@@ -113,14 +179,28 @@ var sciFiStart = "You are drifting through a dimension between what is real and 
 
 //Endings
 var endings = ["Rejection of the Call", "Right? Wrong", "Jurassic Park", "Sorry For Party Rocking", "A Monster You Just Can't Shake", 
-"An Itch You Just Can't Scratch", "A Coward's Death", "Aw, Nuts!", "Don't Stop The Party!", "Welcome to the Club", "why"];
+"An Itch You Just Can't Scratch", "A Coward's Death", "Aw, Nuts!", "Don't Stop The Party!", "Welcome to the Club", "why", "The Real Treasure", 
+"Love Wins", "The REAL Real Treasure (Treasure)", "So No Rock?", "Never Gonna-", "CURSES!!!"];
 
 var state = adventureReady;
+
 var weapon = "";
 var rock = false;
+var key = false;
 var mentalNote = false;
+var straightPathSearched = false;
+var monsterCampKilled = false;
 
 gameStart();
+
+function resetVariables() {
+    weapon = "";
+    rock = false;
+    key = false;
+    mentalNote = false;
+    straightPathSearched = false;
+    monsterCampKilled = false;
+}
 
 function setButtons(optionArray) {
     for (let i = 0; i < optionArray.length; i++) {
@@ -183,6 +263,18 @@ function buttonClicked(buttonNum) {
         fantasyAttackJimborOptions(buttonNum);
     } else if (state == fantasyAssessJimbor) {
         fantasyAssessJimborOptions(buttonNum);
+    } else if (state == fantasyDodgeForward) {
+        fantasyDodgeForwardOptions(buttonNum);
+    } else if (state == fantasyDodgeBackward) {
+        fantasyDodgeBackwardOptions(buttonNum);
+    } else if (state == fantasyBothAssess) {
+        fantasyBothAssessOptions(buttonNum);
+    } else if (state == fantasyJimborImplore) {
+        fantasyJimborImploreOptions(buttonNum);
+    } else if (state == fantasyBefriendJimbor) {
+        fantasyBefriendJimborOptions(buttonNum);
+    } else if (state == fantasyAttemptUnlock) {
+        fantasyAttemptUnlockOptions(buttonNum);
     }
     else {
         playAgainOptions(buttonNum);
@@ -238,15 +330,25 @@ function fantasyEnterDungeonOptions(buttonNum) {
     } else if (buttonNum == 1) {
         responseAndEnd(fantasyRightPath, "Right? Wrong");
     } else {
-        state = fantasyForwardPath;
-        nextOption(state, ["Attack the monsters before they can attack you", "Greet the monsters", "Stand still. Maybe they're like veliciraptors- if you don't move, they can't see you"]);
+        if (straightPathSearched) {
+            state = fantasyEnterDungeon;
+            responseAndOptions("This path has already been completely searched.", ["Left", "Right", "Straight Ahead"]);
+        } else {
+            state = fantasyForwardPath;
+            nextOption(state, ["Attack the monsters before they can attack you", "Greet the monsters", "Stand still. Maybe they're like veliciraptors- if you don't move, they can't see you"]);
+        }
     }
 }
 
 function fantasyLeftPathOptions(buttonNum) {
     if (buttonNum == 0) {
-        state = fantasyOpenChest;
-        nextOption(state, ["Search the room for a key", "Go back to the start"]);
+        if (key) {
+            state = fantasyAttemptUnlock;
+            nextOption(fantasyAttemptUnlock, ["Look for something to hit the lock with", "Give up", "Curse the gods"]);
+        } else {
+            state = fantasyOpenChest;
+            nextOption(state, ["Search the room for a key", "Go back to the start"]);
+        }
     } else {
         state = fantasyFindDoor;
         responseAndOptions(fantasyIgnoreChest, ["Open door", "Go back to the start"])
@@ -436,9 +538,85 @@ function fantasyAssessJimborOptions(buttonNum) {
     nextOption(state, ["Nod appreciatively", "Attack again at the same spot"]);
 }
 
+function fantasyDodgeForwardOptions(buttonNum) {
+    state = fantasyJimborImplore;
+    if (buttonNum == 0) {
+        responseAndOptions(fantasyAttackAgain, ["Befriend", "Kill"]);
+    } else {
+        responseAndOptions(fantasyWait, ["Befriend", "Kill"]);
+    }
+}
+
+function fantasyDodgeBackwardOptions(buttonNum) {
+    state = fantasyJimborImplore;
+    if (buttonNum == 0) {
+        responseAndOptions(fantasyBlockJimbor, ["Befriend", "Kill"]);
+    } else {
+        responseAndOptions(fantasyAttackSameSpot, ["Befriend", "Kill"]);
+    }
+}
+
+function fantasyBothAssessOptions(buttonNum) {
+    state = fantasyJimborImplore;
+    if (buttonNum == 0) {
+        responseAndOptions(fantasyNodAppreciatively, ["Befriend", "Kill"]);
+    } else {
+        responseAndOptions(fantasyAttackSameSpot, ["Befriend", "Kill"]);
+    }
+}
+
+function fantasyJimborImploreOptions(buttonNum) {
+    if (buttonNum == 0) {
+        state = fantasyBefriendJimbor;
+        nextOption(state, ["Everything", "The fellow adventurer who you’ve loved for years but have never had the courage to tell them", 
+            "Your search for treasure"]);
+    } else {
+        state = fantasyEnterDungeon;
+        straightPathSearched = true;
+        key = true;
+        if (mentalNote) {
+            responseAndOptions((fantasyKillJimbor + fantasyMentalNote + fantasyTakeKey), ["Left", "Right", "Straight Ahead"]);
+        } else {
+            responseAndOptions(fantasyKillJimbor + fantasyTakeKey, ["Left", "Right", "Straight Ahead"]);
+        }
+    }
+}
+
+function fantasyBefriendJimborOptions(buttonNum) {
+    if (buttonNum == 0) {
+        responseAndEnd(fantasyEverything, "The Real Treasure");
+    } else if (buttonNum == 1) {
+        responseAndEnd(fantasyFellowAdventurer, "Love Wins");
+    } else {
+        state = fantasyEnterDungeon;
+        straightPathSearched = true;
+        key = true;
+        if (mentalNote) {
+            responseAndOptions((fantasyAskTreasure + fantasyMentalNote + fantasyYesKey + fantasyTakeKey), ["Left", "Right", "Straight Ahead"]);
+        } else {
+            responseAndOptions(fantasyAskTreasure + fantasyTakeKey + fantasyYesKey, ["Left", "Right", "Straight Ahead"]);
+        }
+    }
+}
+
+function fantasyAttemptUnlockOptions(buttonNum) {
+    if (buttonNum == 0) {
+        if (rock) {
+            responseAndEnd(fantasyTreasure, "The REAL Real Treasure (Treasure)");
+        } else {
+            responseAndEnd(fantasyNoRock, "So No Rock?");
+        }
+    } else if (buttonNum == 1) {
+        responseAndEnd(fantasyGiveUp, "Never Gonna-");
+    } else {
+        responseAndEnd(fantasyCurseGods, "CURSES!!!");
+    }
+}
+
 function playAgainOptions(buttonNum) {
     if (buttonNum == 0) {
         state = adventureReady;
+        resetVariables();
         gameStart();
     } else {
         textElement.innerText = "Thank you for playing!";
@@ -478,4 +656,3 @@ function removeButtons() {
         optionButtonsElement.removeChild(optionButtonsElement.firstChild);
     }
 }
-
