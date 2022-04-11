@@ -14,7 +14,7 @@ var optionButtonsElement = document.getElementById("option-buttons");
 var adventureReady = "Are you ready for an adventure?";
 var howAreYou = "How are you?";
 
-//Fantasty Path
+//Fantasty Path states and responses
 var fantasyStart = "Aha! Another day for an adventure! You are completely prepared for the adventure ahead! You reach into your pocket and pull out...";
 var fantasyEnterDungeon = "You walk down a flight of crumbling stairs, the path ahead lit by flickering torches. This dungeon is rumored to contain numerous \
 foul beasts and dangers, but is also rumored to harbor treasure. That is the reason you have come here. Eventually, you encounter a fork in the path. One \
@@ -125,7 +125,7 @@ have fought well, as have I, and I wish to fight no longer. Let us both part fro
 
 var fantasyBefriendJimbor = "You stop and look at the monster, amazed at the eloquence of its words. You realize that it is right. You are not so different \
 from it. Why should you fight? 'What is your name?' You ask. The monster smiles wide, its sharp teeth on full display, but you do not feel threatened. \
-You tell the monster your name, and in return, it tells you that its name is Jimbor. As you speak to Jimbor, you learn about its friends, its family, its \
+The monster tells you that its name is Jimbor, and you tell it your name in return. As you speak to Jimbor, you learn about its friends, its family, its \
 monster home. You tell Jimbor about…";
 var fantasyTakeKey = " You put the key in your pocket, and then you look around the room. You see no unsearched areas, so, you return back to the dunegon's \
 entrance.";
@@ -133,23 +133,23 @@ var fantasyKillJimbor = "'Begone, foul beast!' You shout. You kill the monster w
 Then, you search the room, and you find a gold key."
 var fantasyMentalNote = " You remember your earlier mental note to look for keys. This must be the key you were looking for!";
 var fantasyEverything = "You tell Jimbor about your travels, your hopes, your dreams, your favorite color, your deepest fear. You tell Jimbor about the \
-family you left behind, about the scar on your elbow from your very first battle. You tell Jimbor you’ve never had a friend like it before. Jimbor listens, \
+family you left behind, about the scar on your elbow from your very first battle. You tell Jimbor you've never had a friend like it before. Jimbor listens, \
 and it offers its support to you. You speak for hours, and as you do, you realize that maybe, the real treasure was friendship, all along.";
 var fantasyFellowAdventurer = "You take out your journal and show Jimbor all the entries you have written about the fellow adventurer who you have loved \
 for years. You tell Jimbor all your favorite things about this adventurer, you tell Jimbor about the day you first realized you loved this adventurer. Jimbor \
-listens to you for a long time before it speaks. ‘You know, I am a married monster,’ Jimbor begins, ‘It sounds as if you truly love this adventurer, and if \
-that is the case, my dear friend, I say you should go for it. Leave this dungeon right now, and go and tell this adventurer how you feel.’ You realize that \
+listens to you for a long time before it speaks. 'You know, I am a married monster,' Jimbor begins, 'It sounds as if you truly love this adventurer, and if \
+that is the case, my dear friend, I say you should go for it. Leave this dungeon right now, and go and tell this adventurer how you feel.' You realize that \
 Jimbor is right. You have waited for so long, and you need to act! You leave the dungeon immediately in search of love, thanking Jimbor for its help. When \
 you wed your fellow adventurer, a few months later, you invite Jimbor and its family to your wedding.";
 var fantasyAskTreasure = "You tell Jimbor about your reason for coming to this dungeon: to find the treasure rumored to be here. Jimbor tilts its head, \
-‘Treasure?’ It says. It turns around picking something up from behind it. ‘Would this help?’ Jimbor says, holding out a gold key.";
+'Treasure?' It says. It turns around picking something up from behind it. 'Would this help?' Jimbor says, holding out a gold key.";
 var fantasyYesKey = " 'Yes! Yes, Jimbor- thank you!' You say. 'Thank you so much for your help, friend.' You tell Jimbor.";
 
 var fantasyAttemptUnlock = "You take out the key from your pocket, gazing excitedly at the chest in front of you. This is it: the moment of truth. This \
 is the reason why you came to this dungeon. You slide the key into the lock and- It gets stuck. The lock has been warped, and it's too small for the key \
 you have. The key doesn't fit. All this work, and the key doesn't fit. What now?";
 var fantasyTreasure = "You look through your items, and find nothing of much use, and certainly nothing to break the lock with. You can't use your \
-weapon, either, because that's not its intended purpose in the story. But wait! You remember the rock you have carried with you all your time- \
+weapon, either, because that's not its intended purpose in the story. But wait! You remember the rock you have carried with you all this time- \
 Your dearest friend, your lifelong companion. You take the rock out from your pocket. 'Will you help me, friend?' You ask the rock. The rock says \
 nothing, but you feel that the answer is yes. You swing the rock in your hands and use it to break a hole in the lock large enough for the key to \
 be able to fit again. You turn the key in the lock with a satisfying click, and the chest unlocks. Inside, you find exactly what you came here for, \
@@ -171,10 +171,10 @@ var fantasyCurseGods = "You fall to your knees, throwing the key to the ground a
 at the top of your lungs. Your voice echoes through the dungeon. 'IS MY LIFE SOME SORT OF JOKE TO YOU? DO YOU ENJOY THIS? MAKING ME MISERABLE?' You scream. \
 'CURSE YOU ALL!' Then, you stand up, fuming, and storm out of the dungeon once and for all, done with this game. The moment you step outside, you are struck by lightning.";
 
-//Mystery Path
+//Mystery Path states and responses
 var mysteryStart = "You walk down a stone-bricked road under a gloomy evening sky, feeling crowded in by the buildings on each side. Another day in this cold-hearted city. Just your luck, it begins to rain. You...";
 
-//Sci-Fi Path
+//Sci-Fi Path states and responses
 var sciFiStart = "You are drifting through a dimension between what is real and what is unreal. You choose...";
 
 //Endings
@@ -182,8 +182,10 @@ var endings = ["Rejection of the Call", "Right? Wrong", "Jurassic Park", "Sorry 
 "An Itch You Just Can't Scratch", "A Coward's Death", "Aw, Nuts!", "Don't Stop The Party!", "Welcome to the Club", "why", "The Real Treasure", 
 "Love Wins", "The REAL Real Treasure (Treasure)", "So No Rock?", "Never Gonna-", "CURSES!!!"];
 
+//state initialized to the first question in the game
 var state = adventureReady;
 
+//fantasy global variables
 var weapon = "";
 var rock = false;
 var key = false;
@@ -191,8 +193,10 @@ var mentalNote = false;
 var straightPathSearched = false;
 var monsterCampKilled = false;
 
+//calls function to start the game with first question and options
 gameStart();
 
+//function to reset global variables
 function resetVariables() {
     weapon = "";
     rock = false;
@@ -202,24 +206,88 @@ function resetVariables() {
     monsterCampKilled = false;
 }
 
+//function to create buttons in button grid based on an array of options
+//Input: optionArray, an array containing between 1 and 3 strings that are used for button texts
+//Output: new button(s) displayed on the screen with the given number of buttons, with each button having the text of each respective string in array
 function setButtons(optionArray) {
+    //iteration
     for (let i = 0; i < optionArray.length; i++) {
         createButton(optionArray[i], buttonClicked, i)
     }
 }
 
+//function to prompt a response to the user and then move on to the next question
+//Input: responseString, a string containing the text for the response, and buttonArray, an array containing the options for the next question
+//Output: Response with responseString text and "Continue" button, and then next question with buttonArray options
 function responseAndOptions(responseString, buttonArray) {
     textElement.innerText = responseString;
     removeButtons();
     createButton("Continue", responseClicked, buttonArray);
 }
 
+//function to prompt a response to the user and then produce game ending
+//Input: responseString, a string containing the text for the response, and endingName, the name of this game ending
+//Output: Response with responseString text and "OK" button, and then ending screen with ending name
 function responseAndEnd(responseString, endingName) {
     textElement.innerText = (responseString + " END");
     removeButtons();
     createButton("OK", gameEnd, endingName);
 }
 
+//function for when the continue button is pushed on a response
+//Input: buttonArray, an array containing a given number of strings that represent options
+//Output: Next set of question and options for the user
+function responseClicked(buttonArray) {
+    nextOption(state, buttonArray);
+}
+
+//function to start the game with first state and buttons
+function gameStart() {
+    textElement.innerText = state;
+    removeButtons();
+    setButtons(["Yes", "No"]);
+}
+
+//Figure out bold text for ending name
+//function to end the game
+//Input: endingName, a string containing the nanme of this ending
+//Output: Displayed ending name and the number of the ending within the ending list, then initiates option to play again
+function gameEnd(endingName) {
+    state = "END";
+    nextOption("You have achieved the ending: " + endingName + " (Ending " + (endings.indexOf(endingName)+1) + " out of " +
+    endings.length + "). Play again?", ["Yes", "No"]);
+}
+
+//function to display next option
+//Input: optionTitle, a string containing the question for this option, optionButtons, an array containing the choices/options for this option
+//Output: Next option displayed with question from optionTitle and buttons from optionButtons
+function nextOption(optionTitle, optionButtons) {
+    textElement.innerText = optionTitle;
+    removeButtons();
+    setButtons(optionButtons);
+}
+
+//function to create a new button
+//Input: buttonText, text on the button, clickFunction, function to initiate when button is clicked, and clickParameter, parameter for clickFunction
+//Output: A new button in the button grid with a function for when it is clicked
+function createButton(buttonText, clickFunction, clickParameter) {
+    var button = document.createElement("button");
+    button.innerText = buttonText;
+    button.classList.add("btn");
+    button.addEventListener("click", () => clickFunction(clickParameter));
+    optionButtonsElement.appendChild(button);
+}
+
+//function to remove all current buttons
+function removeButtons() {
+    //iteration
+    while (optionButtonsElement.firstChild) {
+        optionButtonsElement.removeChild(optionButtonsElement.firstChild);
+    }
+}
+
+//function that maps each state to its story path
+//Input: The number of the button clicked by the user (based on its position in the button array)
 function buttonClicked(buttonNum) {
     if (state == adventureReady) {
         adventureReadyOptions(buttonNum);
@@ -281,8 +349,16 @@ function buttonClicked(buttonNum) {
     }
 }
 
-function responseClicked(buttonArray) {
-    nextOption(state, buttonArray);
+//PATHS (a lot of selection)
+function playAgainOptions(buttonNum) {
+    if (buttonNum == 0) {
+        state = adventureReady;
+        resetVariables();
+        gameStart();
+    } else {
+        textElement.innerText = "Thank you for playing!";
+        removeButtons();
+    }
 }
 
 function adventureReadyOptions(buttonNum) {
@@ -307,6 +383,7 @@ function howAreYouOptions(buttonNum) {
     }
 }
 
+//FANTASY PATH
 function fantasyStartOptions(buttonNum) {
     if (buttonNum == 0) {
         state = fantasyEnterDungeon;
@@ -333,6 +410,10 @@ function fantasyEnterDungeonOptions(buttonNum) {
         if (straightPathSearched) {
             state = fantasyEnterDungeon;
             responseAndOptions("This path has already been completely searched.", ["Left", "Right", "Straight Ahead"]);
+        } else if (monsterCampKilled) {
+            state = fantasyEnterKeyRoom;
+            responseAndOptions("You walk into the room that was previously the monsters' encampment. Now, it is devoid of life, the remains of your \
+            destruction scattered around the room. You walk past it all and enter the next room.", ["Attempt to dodge club", ("Attack with your " + weapon)]);
         } else {
             state = fantasyForwardPath;
             nextOption(state, ["Attack the monsters before they can attack you", "Greet the monsters", "Stand still. Maybe they're like veliciraptors- if you don't move, they can't see you"]);
@@ -446,6 +527,7 @@ function fantasyDazeMonsterOptions(buttonNum) {
 function fantasyKeepFightingOptions(buttonNum) {
     if (buttonNum == 0) {
         state = fantasyLootCamp;
+        monsterCampKilled = true;
         nextOption(state, ["Go back to the dungeon's entrance", "Continue to the next room"]);
     } else {
         state = fantasyEnterKeyRoom;
@@ -568,7 +650,7 @@ function fantasyBothAssessOptions(buttonNum) {
 function fantasyJimborImploreOptions(buttonNum) {
     if (buttonNum == 0) {
         state = fantasyBefriendJimbor;
-        nextOption(state, ["Everything", "The fellow adventurer who you’ve loved for years but have never had the courage to tell them", 
+        nextOption(state, ["Everything", "The fellow adventurer who you’ve loved for years but have never had the courage to tell", 
             "Your search for treasure"]);
     } else {
         state = fantasyEnterDungeon;
@@ -610,49 +692,5 @@ function fantasyAttemptUnlockOptions(buttonNum) {
         responseAndEnd(fantasyGiveUp, "Never Gonna-");
     } else {
         responseAndEnd(fantasyCurseGods, "CURSES!!!");
-    }
-}
-
-function playAgainOptions(buttonNum) {
-    if (buttonNum == 0) {
-        state = adventureReady;
-        resetVariables();
-        gameStart();
-    } else {
-        textElement.innerText = "Thank you for playing!";
-        removeButtons();
-    }
-}
-
-//Figure out bold text for ending name
-function gameEnd(endingName) {
-    state = "END";
-    nextOption("You have achieved the ending: " + endingName + " (Ending " + (endings.indexOf(endingName)+1) + " out of " +
-    endings.length + "). Play again?", ["Yes", "No"]);
-}
-
-function gameStart() {
-    textElement.innerText = state;
-    removeButtons();
-    setButtons(["Yes", "No"]);
-}
-
-function nextOption(optionTitle, optionButtons) {
-    textElement.innerText = optionTitle;
-    removeButtons();
-    setButtons(optionButtons);
-}
-
-function createButton(buttonText, clickFunction, clickParameter) {
-    var button = document.createElement("button");
-    button.innerText = buttonText;
-    button.classList.add("btn");
-    button.addEventListener("click", () => clickFunction(clickParameter));
-    optionButtonsElement.appendChild(button);
-}
-
-function removeButtons() {
-    while (optionButtonsElement.firstChild) {
-        optionButtonsElement.removeChild(optionButtonsElement.firstChild);
     }
 }
